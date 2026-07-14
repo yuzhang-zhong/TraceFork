@@ -1,0 +1,38 @@
+{
+  "name": "tracefork",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc && vite build",
+    "build:sample": "tsc && vite build && node scripts/prune-pages-thumbnails.cjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "vitest run",
+    "dataset:audit": "tsx scripts/audit-dataset-trajectories.ts Datasets --max-tasks-per-collection 2",
+    "dataset:import": "tsx scripts/import-dataset-trajectories.ts Datasets --dry-run --max-tasks-per-collection 2",
+    "dataset:import:supabase": "tsx scripts/import-dataset-trajectories.ts Datasets --supabase",
+    "dataset:export-static": "tsx scripts/export-static-trajectory-library.ts Datasets --full --write-thumbnails --thumbnail-limit 80",
+    "dataset:visual-signatures": "tsx scripts/enrich-static-visual-signatures.ts public/trajectory-library/tasks",
+    "dataset:diagnostics": "tsx scripts/build-static-trajectory-diagnostics.ts",
+    "dataset:research-cases": "tsx scripts/build-static-research-cases.ts --library=public/trajectory-library",
+    "verify": "node scripts/verify-app.cjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "jszip": "^3.10.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "playwright": "^1.61.0",
+    "sharp": "^0.35.2",
+    "tsx": "^4.22.4",
+    "vitest": "^4.1.9"
+  }
+}

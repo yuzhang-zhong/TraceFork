@@ -1,0 +1,7 @@
+Datasets/
+artifacts/
+node_modules/
+dist/
+.git/
+.vite-dev*.log
+/*.png

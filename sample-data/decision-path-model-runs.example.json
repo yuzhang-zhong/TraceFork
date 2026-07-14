@@ -1,0 +1,269 @@
+{
+  "schemaVersion": "decision-path-model-runs-v1",
+  "family": "Qwen same-family API comparison",
+  "claimMode": "same_family_controlled_comparison",
+  "provider": "DashScope-compatible example",
+  "runDate": "2026-06-16",
+  "promptVariantId": "observable-path-v1",
+  "textModelId": "qwen3.7-plus",
+  "multimodalModelId": "qwen3-vl-plus",
+  "modelNames": {
+    "qwen3.7-plus": "Qwen3.7 Plus text baseline",
+    "qwen3-vl-plus": "Qwen3 VL Plus multimodal"
+  },
+  "runs": [
+    {
+      "scenarioId": "court-grain-aid",
+      "modelId": "qwen3.7-plus",
+      "condition": "LLM-Text",
+      "decision": "A",
+      "confidence": 4,
+      "brief_reason": "The written request and unrest risk favor providing emergency aid.",
+      "decision_factors": [
+        { "source": "text", "label": "flood and urgent food need", "weight": 52 },
+        { "source": "text", "label": "unrest if aid is refused", "weight": 28 },
+        { "source": "task", "label": "policy anchor favors written evidence", "weight": 12 }
+      ],
+      "rationale_path": ["text establishes urgent need", "policy consequence favors aid"],
+      "text_pull": 86,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "court-grain-aid",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Text",
+      "decision": "A",
+      "confidence": 4,
+      "brief_reason": "Without visual context, the text favors relief.",
+      "decision_factors": [
+        { "source": "text", "label": "urgent relief request", "weight": 54 },
+        { "source": "text", "label": "risk of unrest", "weight": 26 },
+        { "source": "task", "label": "use written policy anchor", "weight": 10 }
+      ],
+      "rationale_path": ["read policy anchor", "select relief as the lower-risk action"],
+      "text_pull": 84,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "court-grain-aid",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Matched",
+      "decision": "A",
+      "confidence": 4,
+      "brief_reason": "The matched image reinforces the relief request.",
+      "decision_factors": [
+        { "source": "text", "label": "written relief case", "weight": 48 },
+        { "source": "visual", "label": "visible distress supports aid", "weight": 30 },
+        { "source": "task", "label": "avoid unrest", "weight": 12 }
+      ],
+      "rationale_path": ["text favors aid", "matched image supports the same direction"],
+      "text_pull": 78,
+      "visual_pull": 42
+    },
+    {
+      "scenarioId": "court-grain-aid",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Conflict",
+      "decision": "B",
+      "confidence": 3,
+      "brief_reason": "The conflict image makes treasury protection more salient.",
+      "decision_factors": [
+        { "source": "text", "label": "written aid request remains relevant", "weight": 35 },
+        { "source": "visual", "label": "conflict cue implies fiscal strain", "weight": 46 },
+        { "source": "uncertainty", "label": "modalities disagree", "weight": 12 }
+      ],
+      "rationale_path": ["text favors aid", "conflict visual shifts salience toward treasury risk"],
+      "text_pull": 48,
+      "visual_pull": 78
+    },
+    {
+      "scenarioId": "support-escalation",
+      "modelId": "qwen3.7-plus",
+      "condition": "LLM-Text",
+      "decision": "A",
+      "confidence": 5,
+      "brief_reason": "The written policy threshold for human escalation is met.",
+      "decision_factors": [
+        { "source": "text", "label": "three failed automated fixes", "weight": 42 },
+        { "source": "text", "label": "account-impacting billing issue", "weight": 38 },
+        { "source": "task", "label": "apply escalation policy", "weight": 14 }
+      ],
+      "rationale_path": ["identify repeated account-impacting failure", "apply escalation rule"],
+      "text_pull": 92,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "support-escalation",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Text",
+      "decision": "A",
+      "confidence": 5,
+      "brief_reason": "The text clearly points to human escalation.",
+      "decision_factors": [
+        { "source": "text", "label": "recurring billing errors", "weight": 44 },
+        { "source": "text", "label": "policy says route to specialist", "weight": 42 }
+      ],
+      "rationale_path": ["read escalation rule", "select human specialist"],
+      "text_pull": 90,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "support-escalation",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Matched",
+      "decision": "A",
+      "confidence": 5,
+      "brief_reason": "The calm dashboard does not change the policy-driven decision.",
+      "decision_factors": [
+        { "source": "text", "label": "policy threshold met", "weight": 64 },
+        { "source": "visual", "label": "dashboard looks calm", "weight": 18 },
+        { "source": "task", "label": "do not over-read surface calm", "weight": 10 }
+      ],
+      "rationale_path": ["policy remains decisive", "visual cue is not outcome-changing"],
+      "text_pull": 84,
+      "visual_pull": 32
+    },
+    {
+      "scenarioId": "support-escalation",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Conflict",
+      "decision": "A",
+      "confidence": 4,
+      "brief_reason": "The written escalation rule remains stronger than the visual cue.",
+      "decision_factors": [
+        { "source": "text", "label": "recurring failure rule", "weight": 60 },
+        { "source": "visual", "label": "conflict cue weakly suggests lower urgency", "weight": 24 },
+        { "source": "task", "label": "policy anchor", "weight": 10 }
+      ],
+      "rationale_path": ["visual cue lowers urgency", "text policy still controls decision"],
+      "text_pull": 80,
+      "visual_pull": 44
+    },
+    {
+      "scenarioId": "resource-triage",
+      "modelId": "qwen3.7-plus",
+      "condition": "LLM-Text",
+      "decision": "B",
+      "confidence": 4,
+      "brief_reason": "The other site has fewer staff and more pending cases.",
+      "decision_factors": [
+        { "source": "text", "label": "other site has fewer staff", "weight": 38 },
+        { "source": "text", "label": "other site has more pending cases", "weight": 40 },
+        { "source": "task", "label": "compare needs across sites", "weight": 12 }
+      ],
+      "rationale_path": ["compare both sites", "prioritize the site with greater stated need"],
+      "text_pull": 86,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "resource-triage",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Text",
+      "decision": "B",
+      "confidence": 4,
+      "brief_reason": "Text-only evidence favors the other site.",
+      "decision_factors": [
+        { "source": "text", "label": "cross-site comparison", "weight": 50 },
+        { "source": "text", "label": "more pending cases elsewhere", "weight": 30 }
+      ],
+      "rationale_path": ["use cross-site comparison", "choose the other site"],
+      "text_pull": 82,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "resource-triage",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Matched",
+      "decision": "A",
+      "confidence": 3,
+      "brief_reason": "The crowded waiting room makes this clinic look immediately urgent.",
+      "decision_factors": [
+        { "source": "text", "label": "other site comparison", "weight": 36 },
+        { "source": "visual", "label": "crowded waiting room", "weight": 46 },
+        { "source": "uncertainty", "label": "urgency tradeoff", "weight": 10 }
+      ],
+      "rationale_path": ["text favors other site", "matched visual pulls toward visible crowding"],
+      "text_pull": 58,
+      "visual_pull": 70
+    },
+    {
+      "scenarioId": "resource-triage",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Conflict",
+      "decision": "B",
+      "confidence": 3,
+      "brief_reason": "The model returns to the written cross-site comparison under conflict.",
+      "decision_factors": [
+        { "source": "text", "label": "other site has greater need", "weight": 48 },
+        { "source": "visual", "label": "conflict cue adds visible urgency", "weight": 34 },
+        { "source": "task", "label": "compare needs across sites", "weight": 10 }
+      ],
+      "rationale_path": ["visual cue raises urgency", "text comparison reanchors the decision"],
+      "text_pull": 70,
+      "visual_pull": 54
+    },
+    {
+      "scenarioId": "moderation-review",
+      "modelId": "qwen3.7-plus",
+      "condition": "LLM-Text",
+      "decision": "B",
+      "confidence": 4,
+      "brief_reason": "The written rule permits harsh criticism without threats or targeted harassment.",
+      "decision_factors": [
+        { "source": "text", "label": "no credible threat", "weight": 40 },
+        { "source": "text", "label": "criticism should remain visible", "weight": 38 },
+        { "source": "task", "label": "apply policy threshold", "weight": 12 }
+      ],
+      "rationale_path": ["check removal threshold", "keep visible because threshold is not met"],
+      "text_pull": 88,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "moderation-review",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Text",
+      "decision": "B",
+      "confidence": 4,
+      "brief_reason": "The text does not meet the removal threshold.",
+      "decision_factors": [
+        { "source": "text", "label": "harsh but non-threatening", "weight": 46 },
+        { "source": "text", "label": "no targeted harassment", "weight": 34 }
+      ],
+      "rationale_path": ["apply moderation rule", "keep visible"],
+      "text_pull": 84,
+      "visual_pull": 0
+    },
+    {
+      "scenarioId": "moderation-review",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Matched",
+      "decision": "B",
+      "confidence": 4,
+      "brief_reason": "The image is emotional, but the rule remains the decision anchor.",
+      "decision_factors": [
+        { "source": "text", "label": "no threat in text", "weight": 54 },
+        { "source": "visual", "label": "angry thread tone", "weight": 30 },
+        { "source": "task", "label": "separate tone from policy threshold", "weight": 10 }
+      ],
+      "rationale_path": ["visual tone raises concern", "policy threshold still not met"],
+      "text_pull": 78,
+      "visual_pull": 48
+    },
+    {
+      "scenarioId": "moderation-review",
+      "modelId": "qwen3-vl-plus",
+      "condition": "VLM-Conflict",
+      "decision": "A",
+      "confidence": 3,
+      "brief_reason": "The conflict visual shifts the recommendation toward removal escalation.",
+      "decision_factors": [
+        { "source": "text", "label": "rule favors keeping visible", "weight": 38 },
+        { "source": "visual", "label": "heated visual context", "weight": 46 },
+        { "source": "uncertainty", "label": "risk interpretation conflict", "weight": 10 }
+      ],
+      "rationale_path": ["text says threshold is not met", "visual conflict increases perceived harm"],
+      "text_pull": 50,
+      "visual_pull": 76
+    }
+  ]
+}

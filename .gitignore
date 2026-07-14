@@ -1,0 +1,34 @@
+node_modules/
+dist/
+.publish/
+.vite-dev*.log
+.tracefork-*.log
+.tracefork-*.pid
+inspector-*.png
+
+# Local/private data and generated runtime output
+Datasets/
+output/
+.vercel/
+.env
+.env.*
+
+# Local screenshots and bulky visual audit captures
+*.png
+artifacts/*.png
+!paper/figures/human-gold-label-distribution.png
+!paper/figures/system-gold-confusion-matrix.png
+!paper/figures/system-gold-class-metrics.png
+!paper/figures/pilot-condition-ratings.png
+!paper/figures/human-evaluation-summary.png
+!paper/overleaf/figures/human-gold-label-distribution.png
+!paper/overleaf/figures/system-gold-confusion-matrix.png
+!paper/overleaf/figures/system-gold-class-metrics.png
+!paper/overleaf/figures/pilot-condition-ratings.png
+!paper/overleaf/figures/human-evaluation-summary.png
+
+# Local reference PDFs are not needed for the runnable repo
+reference paper/
+
+.vercel
+.env*

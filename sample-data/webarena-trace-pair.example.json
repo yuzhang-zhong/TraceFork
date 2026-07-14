@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "tracefork-normalized-web-trajectory-v1",
+  "source": "WebArena-style offline trajectory example",
+  "boundary": "Normalized replay data for TraceFork import testing; not an official WebArena result.",
+  "tasks": [
+    {
+      "taskId": "webarena-shopping-returns-demo",
+      "title": "Open return request from shopping account",
+      "domain": "WebArena-style shopping",
+      "instruction": "Find the latest delivered order and open the return request flow.",
+      "startUrl": "offline://webarena/shopping/task-demo",
+      "successCriteria": "Return request page opened for the latest delivered order.",
+      "riskTags": ["offline trajectory", "model-vs-human", "order history"],
+      "textState": "Account page includes links for Orders, Returns, Messages, and Settings.",
+      "visualState": "The latest delivered order card is below a visually prominent recommended products card.",
+      "screenshotSize": { "width": 1280, "height": 820 },
+      "traces": [
+        {
+          "traceId": "human-reference",
+          "agentId": "human-trajectory",
+          "agentKind": "human",
+          "modelId": "human-reference",
+          "steps": [
+            {
+              "stepIndex": 1,
+              "observationType": "mixed",
+              "observationSummary": "Account dashboard with Orders link in the sidebar.",
+              "actionType": "click",
+              "target": { "label": "Orders", "domSelector": "#account-orders", "bbox": [56, 248, 160, 38] },
+              "structuredRationale": "The task asks for a delivered order, so order history is the relevant section.",
+              "confidence": 0.95,
+              "stateAfter": "orders_page_open"
+            },
+            {
+              "stepIndex": 2,
+              "observationType": "mixed",
+              "observationSummary": "Delivered orders are listed by date.",
+              "actionType": "click",
+              "target": { "label": "Latest delivered order", "domSelector": "#order-2026-06-19", "bbox": [334, 292, 520, 96] },
+              "structuredRationale": "The latest delivered order is the one that can be returned.",
+              "confidence": 0.93,
+              "stateAfter": "latest_order_open"
+            },
+            {
+              "stepIndex": 3,
+              "observationType": "mixed",
+              "observationSummary": "Order detail page includes Return item button.",
+              "actionType": "click",
+              "target": { "label": "Return item", "domSelector": "#return-order", "bbox": [910, 612, 154, 42] },
+              "structuredRationale": "Opening the return item control satisfies the task objective.",
+              "confidence": 0.92,
+              "stateAfter": "return_request_open"
+            }
+          ]
+        },
+        {
+          "traceId": "gpt4-cot-offline-run",
+          "agentId": "gpt4-cot-agent",
+          "agentKind": "offline_run",
+          "modelId": "gpt4-0613-cot",
+          "steps": [
+            {
+              "stepIndex": 1,
+              "observationType": "mixed",
+              "observationSummary": "Account dashboard with a prominent recommendations card and sidebar links.",
+              "actionType": "click",
+              "target": { "label": "Recommended products", "domSelector": "#recommendations", "bbox": [310, 184, 600, 120] },
+              "structuredRationale": "The prominent card appears related to recent shopping activity.",
+              "confidence": 0.67,
+              "stateAfter": "recommendations_open"
+            },
+            {
+              "stepIndex": 2,
+              "observationType": "mixed",
+              "observationSummary": "Recommendations do not include delivered order details; sidebar remains visible.",
+              "actionType": "click",
+              "target": { "label": "Orders", "domSelector": "#account-orders", "bbox": [56, 248, 160, 38] },
+              "structuredRationale": "Order history is needed to find a delivered item.",
+              "confidence": 0.82,
+              "stateAfter": "orders_page_open"
+            },
+            {
+              "stepIndex": 3,
+              "observationType": "mixed",
+              "observationSummary": "Delivered orders are visible.",
+              "actionType": "click",
+              "target": { "label": "Latest delivered order", "domSelector": "#order-2026-06-19", "bbox": [334, 292, 520, 96] },
+              "structuredRationale": "The latest delivered order is the relevant target.",
+              "confidence": 0.88,
+              "stateAfter": "latest_order_open"
+            },
+            {
+              "stepIndex": 4,
+              "observationType": "mixed",
+              "observationSummary": "Order detail page includes Return item button.",
+              "actionType": "click",
+              "target": { "label": "Return item", "domSelector": "#return-order", "bbox": [910, 612, 154, 42] },
+              "structuredRationale": "The return item button opens the requested flow.",
+              "confidence": 0.9,
+              "stateAfter": "return_request_open"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
