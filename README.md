@@ -8,6 +8,10 @@ TraceFork is a research prototype for inspecting and comparing same-task GUI-age
 
 The project is designed for trajectory inspection rather than live agent control. It supports comparisons such as human-vs-model, model-vs-model, prompt-setting variants, and successful-vs-failed runs when the runs belong to the same task.
 
+## Demo
+
+<!-- TODO: add screenshot/demo GIF -->
+
 ## What It Does
 
 - Searches a static trajectory library built from WebArena / VisualWebArena-style traces.
@@ -95,6 +99,16 @@ This public repository should not contain:
 - private drafts, review files, or generated manuscript figures
 - generated `dist/` output
 - local screenshots, temporary logs, or machine-specific paths
+
+## Contributing
+
+Contributions are welcome. To propose a change:
+
+1. Fork the repository and create a branch for your change.
+2. Install dependencies with `npm install`, and verify with `npm test` and `npm run build`.
+3. Open a pull request describing the change and the trajectory fixtures it affects, if any.
+
+Please do not commit secrets, benchmark archives, or generated `dist/` output (see [Repository Hygiene](#repository-hygiene)).
 
 ## License
 
