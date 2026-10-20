@@ -4,13 +4,14 @@
 
 # TraceFork
 
-TraceFork is a research prototype for inspecting and comparing same-task GUI-agent trajectories. It turns released or user-provided web-agent traces into a normalized step schema, aligns two runs, and renders an inspection tree that shows shared progress, forks, missing counterparts, and later convergence.
+**A System for Inspecting GUI-Agent Trajectory Forks**
 
-The project is designed for trajectory inspection rather than live agent control. It supports comparisons such as human-vs-model, model-vs-model, prompt-setting variants, and successful-vs-failed runs when the runs belong to the same task.
+**Accepted to EMNLP 2026 System Demonstrations.**  
+Yuzhang Zhong and Stephen Xia · [Publication details](https://yuzhang-zhong.github.io/publication/2026-tracefork)
 
-## Demo
+TraceFork helps researchers compare GUI-agent runs of the same task and inspect where their behavior diverges. It normalizes released or user-provided web-agent traces, aligns corresponding steps, and renders an inspection tree that highlights shared progress, forks, unmatched steps, and later convergence.
 
-<!-- TODO: add screenshot/demo GIF -->
+Built for trajectory inspection rather than live agent control, TraceFork supports human–model and model–model comparisons, prompt-setting variants, and successful-versus-failed runs of the same task.
 
 ## What It Does
 
