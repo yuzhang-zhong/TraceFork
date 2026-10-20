@@ -1,0 +1,564 @@
+{
+  "schemaVersion": "tracefork-research-cases-v1",
+  "generatedAt": "2026-07-06T19:14:37.447Z",
+  "boundary": [
+    "Cases are selected from normalized real offline trajectory files.",
+    "Metrics describe inspection patterns, not task-success causality.",
+    "Research cases avoid page-frame-coverage-only categories; screenshots may still support inspection but are not the case metric.",
+    "Clicking a case lazy-loads the full same-task run pair."
+  ],
+  "totalPairsScored": 153,
+  "scannedComparableTasks": 1035,
+  "cases": [
+    {
+      "kind": "high_overlap",
+      "label": "High overlap",
+      "interpretation": {
+        "en": "100% overlap means most aligned steps stay near the same GUI state/action path; useful as a sanity check for over-splitting.",
+        "zh": "100% 重叠表示大多数对齐步骤仍接近同一 GUI 状态/动作路径，适合检查系统是否过度分叉。"
+      },
+      "taskId": "webarena-299",
+      "staticPath": "/trajectory-library/tasks/webarena-299.json",
+      "title": "Show the most recent cancelled order",
+      "benchmark": "webarena",
+      "runAId": "webarena-299-webarena-gpt35-16k-cot-gpt3-5-turbo-0613-cot",
+      "runBId": "webarena-299-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runALabel": "gpt3.5-turbo-0613-cot / model / text / success",
+      "runBLabel": "gpt4-0613-cot / model / text / success",
+      "pairKind": "model_vs_model",
+      "metrics": {
+        "missingRate": 0,
+        "overlapRate": 1,
+        "maxDivergence": 0.07,
+        "meanDivergence": 0.041,
+        "rejoinStep": null,
+        "persistent": false,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "high_overlap",
+      "label": "High overlap",
+      "interpretation": {
+        "en": "75% overlap means most aligned steps stay near the same GUI state/action path; useful as a sanity check for over-splitting.",
+        "zh": "75% 重叠表示大多数对齐步骤仍接近同一 GUI 状态/动作路径，适合检查系统是否过度分叉。"
+      },
+      "taskId": "webarena-167",
+      "staticPath": "/trajectory-library/tasks/webarena-167.json",
+      "title": "What are the main criticisms of this product? Please extract the relevant sentences.",
+      "benchmark": "webarena",
+      "runAId": "webarena-167-webarena-gpt35-16k-cot-gpt3-5-turbo-0613-cot",
+      "runBId": "webarena-167-webarena-human-2-human",
+      "runALabel": "gpt3.5-turbo-0613-cot / model / text / success",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.75,
+        "maxDivergence": 0.34,
+        "meanDivergence": 0.206,
+        "rejoinStep": 3,
+        "persistent": false,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "high_overlap",
+      "label": "High overlap",
+      "interpretation": {
+        "en": "75% overlap means most aligned steps stay near the same GUI state/action path; useful as a sanity check for over-splitting.",
+        "zh": "75% 重叠表示大多数对齐步骤仍接近同一 GUI 状态/动作路径，适合检查系统是否过度分叉。"
+      },
+      "taskId": "webarena-188",
+      "staticPath": "/trajectory-library/tasks/webarena-188.json",
+      "title": "Tell me the total cost of my latest cancelled order?",
+      "benchmark": "webarena",
+      "runAId": "webarena-188-webarena-gpt35-16k-cot-gpt3-5-turbo-0613-cot",
+      "runBId": "webarena-188-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runALabel": "gpt3.5-turbo-0613-cot / model / text / success",
+      "runBLabel": "gpt4-0613-cot / model / text / success",
+      "pairKind": "model_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.75,
+        "maxDivergence": 0.34,
+        "meanDivergence": 0.126,
+        "rejoinStep": 3,
+        "persistent": false,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "strong_rejoin",
+      "label": "Clear rejoin",
+      "interpretation": {
+        "en": "Rejoin at step 3 suggests the runs diverge temporarily and later return to comparable state; useful for rejoin detection.",
+        "zh": "第 3 步回归表示两条轨迹短暂分叉后又回到可比状态，适合检查回归识别。"
+      },
+      "taskId": "visualwebarena-shopping-298",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-shopping-298.json",
+      "title": "What size of the dark green hoodie in this page should I buy if my chest size is 120 cm?",
+      "benchmark": "visualwebarena",
+      "site": "shopping",
+      "runAId": "visualwebarena-shopping-298-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-shopping-298-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.25,
+        "maxDivergence": 0.708,
+        "meanDivergence": 0.323,
+        "rejoinStep": 3,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "strong_rejoin",
+      "label": "Clear rejoin",
+      "interpretation": {
+        "en": "Rejoin at step 5 suggests the runs diverge temporarily and later return to comparable state; useful for rejoin detection.",
+        "zh": "第 5 步回归表示两条轨迹短暂分叉后又回到可比状态，适合检查回归识别。"
+      },
+      "taskId": "visualwebarena-shopping-447",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-shopping-447.json",
+      "title": "Add all the items with a strap on this page into my cart",
+      "benchmark": "visualwebarena",
+      "site": "shopping",
+      "runAId": "visualwebarena-shopping-447-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-shopping-447-visual-webarena-human-3-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.111,
+        "overlapRate": 0.556,
+        "maxDivergence": 0.482,
+        "meanDivergence": 0.293,
+        "rejoinStep": 5,
+        "persistent": false,
+        "visualFrameRate": 1,
+        "stepPairs": 9
+      }
+    },
+    {
+      "kind": "strong_rejoin",
+      "label": "Clear rejoin",
+      "interpretation": {
+        "en": "Rejoin at step 9 suggests the runs diverge temporarily and later return to comparable state; useful for rejoin detection.",
+        "zh": "第 9 步回归表示两条轨迹短暂分叉后又回到可比状态，适合检查回归识别。"
+      },
+      "taskId": "visualwebarena-classifieds-144",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-classifieds-144.json",
+      "title": "I recall seeing this exact item of pillows in the Household section on the site, add a comment on its listing with the title \"Commentary\" and text \"How funky...\".",
+      "benchmark": "visualwebarena",
+      "site": "classifieds",
+      "runAId": "visualwebarena-classifieds-144-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-classifieds-144-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.111,
+        "overlapRate": 0.278,
+        "maxDivergence": 0.514,
+        "meanDivergence": 0.39,
+        "rejoinStep": 9,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 18
+      }
+    },
+    {
+      "kind": "persistent_divergence",
+      "label": "Persistent split",
+      "interpretation": {
+        "en": "72% max divergence with persistent split suggests the paths remain separated after the first major fork.",
+        "zh": "72% 最大偏移且持续分叉，表示首次明显分叉后两条路径长期保持分离。"
+      },
+      "taskId": "visualwebarena-shopping-47",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-shopping-47.json",
+      "title": "Add the yellow one in the first row of this page to my shopping cart. viewport_size: {'width': 1280}",
+      "benchmark": "visualwebarena",
+      "site": "shopping",
+      "runAId": "visualwebarena-shopping-47-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-shopping-47-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.2,
+        "overlapRate": 0,
+        "maxDivergence": 0.721,
+        "meanDivergence": 0.537,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 10
+      }
+    },
+    {
+      "kind": "persistent_divergence",
+      "label": "Persistent split",
+      "interpretation": {
+        "en": "71% max divergence with persistent split suggests the paths remain separated after the first major fork.",
+        "zh": "71% 最大偏移且持续分叉，表示首次明显分叉后两条路径长期保持分离。"
+      },
+      "taskId": "visualwebarena-shopping-328",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-shopping-328.json",
+      "title": "Buy eight batteries of the same type as shown in the image while minimizing costs.",
+      "benchmark": "visualwebarena",
+      "site": "shopping",
+      "runAId": "visualwebarena-shopping-328-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-shopping-328-visual-webarena-human-3-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.087,
+        "overlapRate": 0,
+        "maxDivergence": 0.709,
+        "meanDivergence": 0.471,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 23
+      }
+    },
+    {
+      "kind": "persistent_divergence",
+      "label": "Persistent split",
+      "interpretation": {
+        "en": "68% max divergence with persistent split suggests the paths remain separated after the first major fork.",
+        "zh": "68% 最大偏移且持续分叉，表示首次明显分叉后两条路径长期保持分离。"
+      },
+      "taskId": "webarena-476",
+      "staticPath": "/trajectory-library/tasks/webarena-476.json",
+      "title": "Set up a new, empty repository with the name awesome_llm_reading?",
+      "benchmark": "webarena",
+      "runAId": "webarena-476-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runBId": "webarena-476-webarena-human-2-human",
+      "runALabel": "gpt4-0613-cot / model / text / success",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.167,
+        "overlapRate": 0,
+        "maxDivergence": 0.681,
+        "meanDivergence": 0.489,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 6
+      }
+    },
+    {
+      "kind": "human_vs_model",
+      "label": "Human vs model",
+      "interpretation": {
+        "en": "73% divergence in a human-vs-model pair highlights where model behavior departs from a human reference workflow.",
+        "zh": "人类-模型对比中 73% 偏移，可观察模型行为从人类参考流程偏离的位置。"
+      },
+      "taskId": "webarena-95",
+      "staticPath": "/trajectory-library/tasks/webarena-95.json",
+      "title": "Telll me the grand total of invoice 000000002.",
+      "benchmark": "webarena",
+      "runAId": "webarena-95-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runBId": "webarena-95-webarena-human-2-human",
+      "runALabel": "gpt4-0613-cot / model / text / success",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.5,
+        "maxDivergence": 0.734,
+        "meanDivergence": 0.394,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "human_vs_model",
+      "label": "Human vs model",
+      "interpretation": {
+        "en": "73% divergence in a human-vs-model pair highlights where model behavior departs from a human reference workflow.",
+        "zh": "人类-模型对比中 73% 偏移，可观察模型行为从人类参考流程偏离的位置。"
+      },
+      "taskId": "visualwebarena-reddit-22",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-reddit-22.json",
+      "title": "Find this post and tell me what the top comment says.",
+      "benchmark": "visualwebarena",
+      "site": "reddit",
+      "runAId": "visualwebarena-reddit-22-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-reddit-22-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.125,
+        "maxDivergence": 0.725,
+        "meanDivergence": 0.447,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 8
+      }
+    },
+    {
+      "kind": "human_vs_model",
+      "label": "Human vs model",
+      "interpretation": {
+        "en": "71% divergence in a human-vs-model pair highlights where model behavior departs from a human reference workflow.",
+        "zh": "人类-模型对比中 71% 偏移，可观察模型行为从人类参考流程偏离的位置。"
+      },
+      "taskId": "webarena-773",
+      "staticPath": "/trajectory-library/tasks/webarena-773.json",
+      "title": "Delete all pending negative reviews",
+      "benchmark": "webarena",
+      "runAId": "webarena-773-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runBId": "webarena-773-webarena-human-2-human",
+      "runALabel": "gpt4-0613-cot / model / text / success",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.286,
+        "overlapRate": 0.429,
+        "maxDivergence": 0.705,
+        "meanDivergence": 0.357,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 14
+      }
+    },
+    {
+      "kind": "model_vs_model",
+      "label": "Model vs model",
+      "interpretation": {
+        "en": "43% divergence between model runs isolates differences from prompt/model settings without using a human reference.",
+        "zh": "模型-模型之间 43% 偏移，用于观察不同模型或提示设置造成的轨迹差异。"
+      },
+      "taskId": "webarena-310",
+      "staticPath": "/trajectory-library/tasks/webarena-310.json",
+      "title": "Tell me who has made the most contributions, in terms of number of commits, to the AndroidSlidingUpPanel project",
+      "benchmark": "webarena",
+      "runAId": "webarena-310-webarena-gpt35-16k-cot-gpt3-5-turbo-0613-cot",
+      "runBId": "webarena-310-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runALabel": "gpt3.5-turbo-0613-cot / model / text / success",
+      "runBLabel": "gpt4-0613-cot / model / text / success",
+      "pairKind": "model_vs_model",
+      "metrics": {
+        "missingRate": 0.167,
+        "overlapRate": 0.333,
+        "maxDivergence": 0.426,
+        "meanDivergence": 0.278,
+        "rejoinStep": 6,
+        "persistent": false,
+        "visualFrameRate": 1,
+        "stepPairs": 6
+      }
+    },
+    {
+      "kind": "model_vs_model",
+      "label": "Model vs model",
+      "interpretation": {
+        "en": "34% divergence between model runs isolates differences from prompt/model settings without using a human reference.",
+        "zh": "模型-模型之间 34% 偏移，用于观察不同模型或提示设置造成的轨迹差异。"
+      },
+      "taskId": "webarena-190",
+      "staticPath": "/trajectory-library/tasks/webarena-190.json",
+      "title": "Tell me the total cost of my latest complete order?",
+      "benchmark": "webarena",
+      "runAId": "webarena-190-webarena-gpt35-16k-cot-gpt3-5-turbo-0613-cot",
+      "runBId": "webarena-190-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runALabel": "gpt3.5-turbo-0613-cot / model / text / success",
+      "runBLabel": "gpt4-0613-cot / model / text / success",
+      "pairKind": "model_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.75,
+        "maxDivergence": 0.34,
+        "meanDivergence": 0.106,
+        "rejoinStep": 3,
+        "persistent": false,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "early_split",
+      "label": "Early split",
+      "interpretation": {
+        "en": "69% max divergence with low missing suggests an early actionable split rather than a metadata artifact.",
+        "zh": "69% 最大偏移且缺失率较低，通常说明早期动作/状态分叉，而非元数据缺失造成。"
+      },
+      "taskId": "visualwebarena-shopping-276",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-shopping-276.json",
+      "title": "Can you take me to the page that has this character on a PS4 controller?",
+      "benchmark": "visualwebarena",
+      "site": "shopping",
+      "runAId": "visualwebarena-shopping-276-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-shopping-276-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0,
+        "maxDivergence": 0.694,
+        "meanDivergence": 0.551,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "early_split",
+      "label": "Early split",
+      "interpretation": {
+        "en": "69% max divergence with low missing suggests an early actionable split rather than a metadata artifact.",
+        "zh": "69% 最大偏移且缺失率较低，通常说明早期动作/状态分叉，而非元数据缺失造成。"
+      },
+      "taskId": "visualwebarena-classifieds-7",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-classifieds-7.json",
+      "title": "Return the links of the 2 most recent items in the \"Cell phones\" category within $300 to $600 that are white in color.",
+      "benchmark": "visualwebarena",
+      "site": "classifieds",
+      "runAId": "visualwebarena-classifieds-7-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-classifieds-7-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.286,
+        "overlapRate": 0,
+        "maxDivergence": 0.692,
+        "meanDivergence": 0.502,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 7
+      }
+    },
+    {
+      "kind": "long_recovery",
+      "label": "Long recovery",
+      "interpretation": {
+        "en": "Rejoin at step 5 after several steps is useful for studying recovery after a non-trivial detour.",
+        "zh": "多步之后在第 5 步回归，适合研究绕路后的恢复过程。"
+      },
+      "taskId": "visualwebarena-classifieds-91",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-classifieds-91.json",
+      "title": "Find the cheapest car listing in the \"Cars + trucks\" category from Ohio that has an image taken from inside the car.",
+      "benchmark": "visualwebarena",
+      "site": "classifieds",
+      "runAId": "visualwebarena-classifieds-91-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-classifieds-91-visual-webarena-human-3-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.188,
+        "overlapRate": 0.219,
+        "maxDivergence": 0.507,
+        "meanDivergence": 0.386,
+        "rejoinStep": 5,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 32
+      }
+    },
+    {
+      "kind": "low_missing_divergence",
+      "label": "Clean divergence",
+      "interpretation": {
+        "en": "0% missing with 50% max divergence suggests the difference is mostly observable disagreement, not absent counterparts.",
+        "zh": "0% 缺失且最大偏移 50%，说明差异主要来自可观察动作/状态不一致，而不是缺少对应步。"
+      },
+      "taskId": "visualwebarena-reddit-101",
+      "staticPath": "/trajectory-library/tasks/visualwebarena-reddit-101.json",
+      "title": "Navigate to the comments section of a post that contains a picture of a keyboard.",
+      "benchmark": "visualwebarena",
+      "site": "reddit",
+      "runAId": "visualwebarena-reddit-101-visual-webarena-gpt4-gpt-4-vision-preview",
+      "runBId": "visualwebarena-reddit-101-visual-webarena-human-human",
+      "runALabel": "gpt-4-vision-preview / model / vision / unknown",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0,
+        "overlapRate": 0,
+        "maxDivergence": 0.499,
+        "meanDivergence": 0.489,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "persistent_divergence",
+      "label": "Persistent split",
+      "interpretation": {
+        "en": "52% max divergence with persistent split suggests the paths remain separated after the first major fork.",
+        "zh": "52% 最大偏移且持续分叉，表示首次明显分叉后两条路径长期保持分离。"
+      },
+      "taskId": "webarena-514",
+      "staticPath": "/trajectory-library/tasks/webarena-514.json",
+      "title": "Add a white desk to my wish list.",
+      "benchmark": "webarena",
+      "runAId": "webarena-514-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runBId": "webarena-514-webarena-human-2-human",
+      "runALabel": "gpt4-0613-cot / model / text / success",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0,
+        "overlapRate": 0,
+        "maxDivergence": 0.516,
+        "meanDivergence": 0.418,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    },
+    {
+      "kind": "persistent_divergence",
+      "label": "Persistent split",
+      "interpretation": {
+        "en": "69% max divergence with persistent split suggests the paths remain separated after the first major fork.",
+        "zh": "69% 最大偏移且持续分叉，表示首次明显分叉后两条路径长期保持分离。"
+      },
+      "taskId": "webarena-48",
+      "staticPath": "/trajectory-library/tasks/webarena-48.json",
+      "title": "Today is 6/12/2023. Tell me how many fulfilled orders I have over the past three days, and the total amount of money I spent.",
+      "benchmark": "webarena",
+      "runAId": "webarena-48-webarena-gpt4-8k-cot-gpt4-0613-cot",
+      "runBId": "webarena-48-webarena-human-2-human",
+      "runALabel": "gpt4-0613-cot / model / text / success",
+      "runBLabel": "human-reference / human / mixed / unknown",
+      "pairKind": "human_vs_model",
+      "metrics": {
+        "missingRate": 0.25,
+        "overlapRate": 0.5,
+        "maxDivergence": 0.689,
+        "meanDivergence": 0.395,
+        "rejoinStep": null,
+        "persistent": true,
+        "visualFrameRate": 1,
+        "stepPairs": 4
+      }
+    }
+  ]
+}
