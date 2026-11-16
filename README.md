@@ -4,6 +4,8 @@
 
 # TraceFork
 
+**English** · [简体中文](README.zh-CN.md)
+
 **A System for Inspecting GUI-Agent Trajectory Forks**
 
 [![React](https://img.shields.io/badge/React-19-149eca)](package.json)
