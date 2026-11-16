@@ -21,10 +21,6 @@ TraceFork helps researchers compare GUI-agent runs of the same task and inspect 
 
 Built for trajectory inspection rather than live agent control, TraceFork supports human–model and model–model comparisons, prompt-setting variants, and successful-versus-failed runs of the same task.
 
-| Compare | Inspect | Extend |
-| --- | --- | --- |
-| Same-task runs, model variants, and outcomes | Shared steps, forks, rejoins, and screenshot evidence | Import traces, export a static library, or add a hosted search backend |
-
 ## What It Does
 
 - Searches a static trajectory library built from WebArena / VisualWebArena-style traces.
