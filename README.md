@@ -1,17 +1,29 @@
-<p align="center">
+<div align="center">
+
   <img src="public/tracefork-icon.svg" alt="TraceFork icon" width="96" height="96" />
-</p>
 
 # TraceFork
 
 **A System for Inspecting GUI-Agent Trajectory Forks**
 
+[![React](https://img.shields.io/badge/React-19-149eca)](package.json)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6)](src/)
+[![License](https://img.shields.io/badge/Code_license-MIT-green)](LICENSE)
+
 **Accepted to EMNLP 2026 System Demonstrations.**  
 Yuzhang Zhong and Stephen Xia · [Publication details](https://yuzhang-zhong.github.io/publication/2026-tracefork)
+
+[Quick start](#quick-start) · [Features](#what-it-does) · [Trajectory library](#static-trajectory-library) · [Deployment](#deployment) · [Contributing](#contributing)
+
+</div>
 
 TraceFork helps researchers compare GUI-agent runs of the same task and inspect where their behavior diverges. It normalizes released or user-provided web-agent traces, aligns corresponding steps, and renders an inspection tree that highlights shared progress, forks, unmatched steps, and later convergence.
 
 Built for trajectory inspection rather than live agent control, TraceFork supports human–model and model–model comparisons, prompt-setting variants, and successful-versus-failed runs of the same task.
+
+| Compare | Inspect | Extend |
+| --- | --- | --- |
+| Same-task runs, model variants, and outcomes | Shared steps, forks, rejoins, and screenshot evidence | Import traces, export a static library, or add a hosted search backend |
 
 ## What It Does
 
@@ -25,7 +37,11 @@ TraceFork only uses observable trace artifacts: actions, targets, page/state sum
 
 ## Quick Start
 
+With Node.js and npm installed:
+
 ```bash
+git clone https://github.com/yuzhang-zhong/TraceFork.git
+cd TraceFork
 npm install
 npm run dev
 ```
@@ -48,9 +64,7 @@ npm test
 
 The repository includes a static, normalized trajectory library under:
 
-```text
-public/trajectory-library/
-```
+[`public/trajectory-library/`](public/trajectory-library/).
 
 Raw benchmark archives are intentionally not committed. If you have local WebArena / VisualWebArena releases, keep them outside the frontend bundle and use:
 
@@ -67,9 +81,7 @@ npm run dataset:research-cases
 
 TraceFork can run as a static demo from the bundled trajectory library. For a hosted searchable database, apply:
 
-```text
-supabase/schema.sql
-```
+[`supabase/schema.sql`](supabase/schema.sql)
 
 and configure server-side environment variables:
 
@@ -82,7 +94,7 @@ Do not expose service-role keys in browser code.
 
 ## Deployment
 
-The included GitHub Pages workflow builds the Vite app with:
+The included [GitHub Pages workflow](.github/workflows/pages.yml) builds the Vite app with:
 
 ```text
 VITE_BASE_PATH=/TraceFork/
