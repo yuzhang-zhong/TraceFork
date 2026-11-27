@@ -15,11 +15,11 @@
 **Accepted to EMNLP 2026 System Demonstrations.**  
 Yuzhang Zhong and Stephen Xia · [Publication details](https://yuzhang-zhong.github.io/publication/2026-tracefork)
 
-[Quick start](#quick-start) · [Features](#what-it-does) · [Trajectory library](#static-trajectory-library) · [Deployment](#deployment) · [Contributing](#contributing)
+[Live demo](https://yuzhang-zhong.github.io/TraceFork/) · [Quick start](#quick-start) · [Features](#what-it-does) · [Trajectory library](#static-trajectory-library) · [Deployment](#deployment) · [Contributing](#contributing)
 
 </div>
 
-TraceFork helps researchers compare GUI-agent runs of the same task and inspect where their behavior diverges. It normalizes released or user-provided web-agent traces, aligns corresponding steps, and renders an inspection tree that highlights shared progress, forks, unmatched steps, and later convergence.
+TraceFork helps researchers and agent engineers compare GUI-agent, browser-agent, and computer-use runs of the same task to inspect where their execution trajectories diverge. It normalizes released or user-provided web-agent execution traces, computes a deterministic trajectory diff and step alignment, and renders an interactive inspection tree that highlights shared progress, branching forks, unmatched actions, and later convergence.
 
 Built for trajectory inspection rather than live agent control, TraceFork supports human–model and model–model comparisons, prompt-setting variants, and successful-versus-failed runs of the same task.
 
@@ -120,6 +120,10 @@ Contributions are welcome. To propose a change:
 3. Open a pull request describing the change and the trajectory fixtures it affects, if any.
 
 Please do not commit secrets, benchmark archives, or generated `dist/` output (see [Repository Hygiene](#repository-hygiene)).
+
+## 中文简介
+
+TraceFork（EMNLP 2026 System Demonstrations）是一套用于**比较同一任务下 GUI 智能体、网页浏览器智能体（Web Agent / Computer-Use Agent）多次执行轨迹分叉与汇合**的交互式检查系统（[在线体验](https://yuzhang-zhong.github.io/TraceFork/)）。系统将 WebArena / VisualWebArena 或自定义日志规范化后进行确定性步骤对齐与轨迹差异（Trajectory Diff）评分，以分叉检查树直观展示共同步骤、行为分歧点、未匹配动作及悬停截图证据，支持人机对比、不同模型或提示词对比，以及成功与失败轨迹的故障诊断。详见[简体中文说明](README.zh-CN.md)。
 
 ## License
 

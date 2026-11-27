@@ -1,0 +1,13 @@
+# TraceFork
+
+> Interactive inspection tree for comparing, aligning, and diffing same-task GUI-agent, browser-agent, and computer-use execution trajectories (EMNLP 2026 System Demonstrations).
+
+- Live Web App: https://yuzhang-zhong.github.io/TraceFork/
+- Source Repository: https://github.com/yuzhang-zhong/TraceFork
+- Authors: Yuzhang Zhong, Stephen Xia
+
+## Capabilities
+- Deterministic step alignment and divergence scoring across two or more runs of the same GUI/web agent task.
+- Interactive fork/rejoin inspection tree with action nodes, state summaries, and screenshot evidence.
+- Built-in WebArena / VisualWebArena static trajectory library plus support for pasted raw logs, HTML excerpts, and normalized JSON traces.
+- Supports human-vs-model, model-vs-model, prompt-variant, and success-vs-failure trajectory debugging.
