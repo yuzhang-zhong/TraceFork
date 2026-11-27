@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use or reference this project, please cite it using the metadata below."
+type: software
+title: "TraceFork: Interactive Inspection Tree for Comparing Same-Task GUI-Agent Trajectories"
+authors:
+  - family-names: "Zhong"
+    given-names: "Yuzhang"
+  - family-names: "Xia"
+    given-names: "Stephen"
+repository-code: "https://github.com/yuzhang-zhong/TraceFork"
+url: "https://yuzhang-zhong.github.io/TraceFork/"
+license: "MIT"
+abstract: "EMNLP 2026 System Demonstrations web tool that normalizes, deterministically aligns, and diffs two or more GUI-agent, browser-agent, or computer-use execution trajectories on the same task into an interactive fork/rejoin branching tree."
+keywords:
+  - "gui-agent"
+  - "browser-agent"
+  - "computer-use"
+  - "trajectory-comparison"
+  - "trajectory-diff"
+  - "branching-tree"
+  - "agent-debugging"
+  - "webarena"
+  - "visualwebarena"
+  - "emnlp-2026"

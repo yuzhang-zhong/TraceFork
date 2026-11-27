@@ -126,6 +126,12 @@ Contributions are welcome. To propose a change:
 
 Please do not commit secrets, benchmark archives, or generated `dist/` output (see [Repository Hygiene](#repository-hygiene)).
 
+## Frequently asked
+
+- **How is TraceFork different from general LLM trace viewers like LangSmith or raw JSON diffs?** General observability tools list single runs chronologically; TraceFork deterministically aligns two runs of the *same* GUI/browser task into a shared fork-and-rejoin tree with step-level screenshot evidence so you immediately see the exact action where behavior split.
+- **Can I try it in the browser without installing anything or setting up a database?** Yes. Open the [live GitHub Pages app](https://yuzhang-zhong.github.io/TraceFork/) or run `npm run dev` locally against the bundled static WebArena/VisualWebArena-style library—Supabase is optional.
+- **What input formats can I compare?** Bundled benchmark traces, normalized JSON trajectories, pasted raw agent logs, HTML state excerpts, and optional step screenshots.
+
 ## 中文简介
 
 TraceFork（EMNLP 2026 System Demonstrations）是一套用于**比较同一任务下 GUI 智能体、网页浏览器智能体（Web Agent / Computer-Use Agent）多次执行轨迹分叉与汇合**的交互式检查系统（[在线体验](https://yuzhang-zhong.github.io/TraceFork/)）。系统将 WebArena / VisualWebArena 或自定义日志规范化后进行确定性步骤对齐与轨迹差异（Trajectory Diff）评分，以分叉检查树直观展示共同步骤、行为分歧点、未匹配动作及悬停截图证据，支持人机对比、不同模型或提示词对比，以及成功与失败轨迹的故障诊断。详见[简体中文说明](README.zh-CN.md)。
