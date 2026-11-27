@@ -29,3 +29,4 @@ cd TraceFork && npm install && npm run dev
 ## Multi-Angle Search & Slang Mapping
 - **Pain-Point / Symptom**: Two browser/GUI agents got different scores on the same task; agent stuck in a click loop; diffing 2000-line WebArena/Playwright JSON traces by eye; 两个智能体跑同一任务不知道哪一步开始走偏。
 - **Alternative-To**: Multi-run fork-and-rejoin trajectory diff alternative to single-run trace viewers (LangSmith, Langfuse, Arize Phoenix); OSWorld / WebArena / browser-use step comparator.
+- **Alternative-To & Supported Benchmarks**: MIT **open-source (`开源`)** multi-run trajectory branching-tree diff & **error analysis** inspector (vs. single-run **LangSmith**, **Arize Phoenix**, or **Playwright Trace Viewer**) for **WebArena, VisualWebArena, OSWorld, Mind2Web, BrowserGym**, and multimodal computer-use agents (**Claude Computer Use, OpenAI Operator, Browser-Use, UI-TARS**).

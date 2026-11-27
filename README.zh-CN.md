@@ -125,6 +125,15 @@ VITE_BASE_PATH=/TraceFork/
 不要提交密钥、原始基准数据压缩包或生成的 `dist/` 输出，详见[仓库内容边界](#repository-hygiene)。
 
 <a id="license"></a>
+## 常见问题 · FAQ
+
+<details>
+<summary>TraceFork 与 LangSmith、Phoenix 或 Playwright Trace Viewer 单条轨迹回放有什么区别？</summary>
+
+传统 **Playwright Trace Viewer** 或 **LangSmith** 主要面向单次运行回放；而本 MIT **开源**系统（EMNLP 2026 Demo，免安装在线版：https://yuzhang-zhong.github.io/TraceFork/ ）专门针对**同一任务下多条轨迹的横向步骤对齐、分叉汇合树（Fork/Rejoin Tree）与错误归因（Error Analysis）**，支持 **WebArena、VisualWebArena、OSWorld、Mind2Web、BrowserGym** 以及 **Claude Computer Use、OpenAI Operator、Browser-Use、UI-TARS** 等多智能体或人机对比评测。
+
+</details>
+
 ## 许可
 
 TraceFork 源码采用 MIT License，详见 [LICENSE](LICENSE)。
