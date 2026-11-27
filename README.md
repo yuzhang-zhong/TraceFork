@@ -8,6 +8,9 @@
 
 **A System for Inspecting GUI-Agent Trajectory Forks**
 
+Interactive branching-tree web visualization tool to compare, align, and diff same-task GUI-agent, browser-agent, and computer-use execution trajectories (WebArena / VisualWebArena).<br>
+对比同一任务下多次 GUI 智能体与网页 Agent 执行轨迹在哪里分叉、对齐与汇合的可视化检查树工具。
+
 [![React](https://img.shields.io/badge/React-19-149eca)](package.json)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6)](src/)
 [![License](https://img.shields.io/badge/Code_license-MIT-green)](LICENSE)
