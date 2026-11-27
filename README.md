@@ -134,7 +134,7 @@ Please do not commit secrets, benchmark archives, or generated `dist/` output (s
 
 ## 中文简介
 
-TraceFork（EMNLP 2026 System Demonstrations）是一套用于**比较同一任务下 GUI 智能体、网页浏览器智能体（Web Agent / Computer-Use Agent）多次执行轨迹分叉与汇合**的交互式检查系统（[在线体验](https://yuzhang-zhong.github.io/TraceFork/)）。系统将 WebArena / VisualWebArena 或自定义日志规范化后进行确定性步骤对齐与轨迹差异（Trajectory Diff）评分，以分叉检查树直观展示共同步骤、行为分歧点、未匹配动作及悬停截图证据，支持人机对比、不同模型或提示词对比，以及成功与失败轨迹的故障诊断。详见[简体中文说明](README.zh-CN.md)。
+TraceFork（EMNLP 2026 System Demonstrations）是一套用于**比较同一任务下 GUI 智能体、网页浏览器智能体（Web Agent / Computer-Use Agent）多次执行轨迹分叉与汇合**的交互式检查系统（[在线体验](https://yuzhang-zhong.github.io/TraceFork/)）。系统将 WebArena / VisualWebArena 或自定义日志规范化后进行确定性步骤对齐与轨迹差异（Trajectory Diff）评分，以分叉检查树直观展示共同步骤、行为分歧点、未匹配动作及悬停截图证据，支持人机对比、不同模型或提示词对比，以及成功与失败轨迹的故障诊断。不同于只看单条时间线的 LangSmith / Langfuse，专为对比 WebArena、VisualWebArena、OSWorld 或 Playwright 两次运行「一个成功一个失败 / 死循环」而设计。详见[简体中文说明](README.zh-CN.md)与 [`llms.txt`](llms.txt)。
 
 ## License
 

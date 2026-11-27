@@ -25,3 +25,7 @@ cd TraceFork && npm install && npm run dev
 - [README (English)](README.md) · [README (简体中文)](README.zh-CN.md)
 - [Static Trajectory Library](public/trajectory-library/)
 - [Third-Party Notices](THIRD_PARTY_NOTICES.md)
+
+## Multi-Angle Search & Slang Mapping
+- **Pain-Point / Symptom**: Two browser/GUI agents got different scores on the same task; agent stuck in a click loop; diffing 2000-line WebArena/Playwright JSON traces by eye; 两个智能体跑同一任务不知道哪一步开始走偏。
+- **Alternative-To**: Multi-run fork-and-rejoin trajectory diff alternative to single-run trace viewers (LangSmith, Langfuse, Arize Phoenix); OSWorld / WebArena / browser-use step comparator.

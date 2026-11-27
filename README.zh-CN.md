@@ -19,6 +19,8 @@ Yuzhang Zhong、Stephen Xia · [论文信息](https://yuzhang-zhong.github.io/pu
 
 </div>
 
+> **一句话速览：** 两个 GUI / 浏览器智能体（WebArena、VisualWebArena、Playwright、computer-use）跑同一网页任务，一个成功一个失败或死循环，肉眼比对几千行 JSON 日志太痛苦？TraceFork（[免安装在线演示](https://yuzhang-zhong.github.io/TraceFork/)）自动对齐两条执行轨迹，画成带截图证据的**分叉树**，一眼定位从哪一步开始走岔路或重新汇合。
+
 TraceFork 帮助研究者比较 GUI 智能体执行同一任务的多次运行，检查行为从哪里开始不同。它将已发布或用户提供的 Web 智能体轨迹规范化，对齐相应步骤，并用检查树展示共同进展、分叉、未匹配步骤和后续汇合。
 
 系统用于检查轨迹，不负责实时控制智能体。可比较人与模型、模型与模型、不同提示词设置，以及同一任务中成功和失败的运行。
