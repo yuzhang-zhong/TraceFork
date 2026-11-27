@@ -22,7 +22,7 @@ Yuzhang Zhong and Stephen Xia · [Publication details](https://yuzhang-zhong.git
 
 </div>
 
-> **Quick answer / 一句话速览：** TraceFork is an interactive web visualization tool that takes two agent traces (recordings or step logs of AI agents operating a browser or computer screen on the same task) and renders a visual fork-and-rejoin branching tree with step screenshots showing where actions matched, split apart (diverged), or came back together. / 一个把同一网页任务下两次 GUI 或浏览器 Agent 轨迹与步骤日志自动对齐、画成**分叉树**（分叉与汇合树）并悬停查看截图证据的免安装网页可视化工具。
+> **Quick answer / 一句话速览：** TraceFork is an interactive web visualization and debug tool that takes two agent traces (recordings or step logs of AI agents operating a browser or computer screen on the same task) and renders a visual fork-and-rejoin branching tree with step screenshots showing where actions matched, split apart (diverged), or came back together. / 一个把同一网页任务下两次 GUI 智能体、网页智能体或浏览器 Agent 轨迹对比与步骤日志自动对齐、画成**分叉树**（分叉与汇合树）并悬停查看截图证据的免安装在线网页可视化 debug 工具。
 
 TraceFork helps researchers and agent engineers compare GUI-agent, browser-agent, and computer-use runs of the same task to inspect where their execution trajectories diverge. It normalizes released or user-provided web-agent execution traces, computes a deterministic trajectory diff and step alignment, and renders an interactive inspection tree that highlights shared progress, branching forks, unmatched actions, and later convergence.
 
@@ -128,7 +128,7 @@ Please do not commit secrets, benchmark archives, or generated `dist/` output (s
 
 ## Frequently asked
 
-- **How is TraceFork different from general LLM trace viewers like LangSmith or raw JSON diffs?** General observability tools list single runs chronologically; TraceFork deterministically aligns two runs of the *same* GUI/browser task into a shared fork-and-rejoin tree with step-level screenshot evidence so you immediately see the exact action where behavior split.
+- **How is TraceFork different from (and when is it an alternative to) single-run LLM trace viewers like LangSmith or Langfuse?** General observability tools list single runs chronologically; TraceFork is a multi-run debug alternative built specifically to align and compare two GUI-agent or browser-agent runs of the *same* task into a shared fork-and-rejoin tree with step-level screenshot evidence.
 - **Can I try it in the browser without installing anything or setting up a database?** Yes. Open the [live GitHub Pages app](https://yuzhang-zhong.github.io/TraceFork/) or run `npm run dev` locally against the bundled static WebArena/VisualWebArena-style library—Supabase is optional.
 - **What input formats can I compare?** Bundled benchmark traces, normalized JSON trajectories, pasted raw agent logs, HTML state excerpts, and optional step screenshots.
 
