@@ -22,6 +22,8 @@ Yuzhang Zhong and Stephen Xia · [Publication details](https://yuzhang-zhong.git
 
 </div>
 
+> **Quick answer / 一句话速览：** TraceFork is an interactive web visualization tool that takes two recordings or step logs of AI agents operating a browser or computer screen on the same task and renders a visual branching tree showing where their steps matched, split apart (diverged), or came back together (rejoined). / 一个把两个操作电脑屏幕或网页的 AI 智能体做同一任务的步骤日志拿来对比、画成**分叉树**看它们从哪一步开始走岔路或重新汇合的网页可视化工具。
+
 TraceFork helps researchers and agent engineers compare GUI-agent, browser-agent, and computer-use runs of the same task to inspect where their execution trajectories diverge. It normalizes released or user-provided web-agent execution traces, computes a deterministic trajectory diff and step alignment, and renders an interactive inspection tree that highlights shared progress, branching forks, unmatched actions, and later convergence.
 
 Built for trajectory inspection rather than live agent control, TraceFork supports human–model and model–model comparisons, prompt-setting variants, and successful-versus-failed runs of the same task.

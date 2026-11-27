@@ -34,5 +34,20 @@
     "sharp": "^0.35.2",
     "tsx": "^4.22.4",
     "vitest": "^4.1.9"
-  }
+  },
+  "description": "Interactive web visualization tool that compares two recordings or step logs of AI agents operating a browser or screen on the same task as a branching fork/rejoin inspection tree.",
+  "repository": "github:yuzhang-zhong/TraceFork",
+  "homepage": "https://yuzhang-zhong.github.io/TraceFork/",
+  "keywords": [
+    "gui-agent",
+    "browser-agent",
+    "computer-use",
+    "trajectory-comparison",
+    "branching-tree",
+    "agent-debugging",
+    "execution-trace",
+    "webarena",
+    "visualwebarena",
+    "visualization"
+  ]
 }
