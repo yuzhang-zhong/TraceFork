@@ -2,7 +2,7 @@
 
   <img src="public/tracefork-icon.svg" alt="TraceFork icon" width="96" height="96" />
 
-# TraceFork
+# TraceFork — GUI & Web Agent Trajectory Comparison & Visualization
 
 **English** · [简体中文](README.zh-CN.md)
 
